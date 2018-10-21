@@ -8,6 +8,9 @@
 
 namespace app\admin\controller;
 
+use app\admin\model\SubModel;
+use app\admin\model\TicketModel;
+use app\admin\model\UserModel;
 use think\Controller;
 use app\admin\model\AdminModel;
 use think\Session;

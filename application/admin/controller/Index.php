@@ -1,21 +1,35 @@
 <?php
+
 namespace app\admin\controller;
 
+use app\admin\model\SubModel;
+use app\admin\model\TicketModel;
+use app\admin\model\UserModel;
 use think\Request;
-use app\admin\model\AdminModel;
-use app\admin\controller\WebControl;
-use think\Session;
-use app\admin\controller\BasicControl;
-
 class Index extends BasicControl
 {
-    public function index(Request $request){
-            return $this->fetch();
-    }
-    public function chart(){
+    public function index(Request $request)
+    {
+        $admin = [];
+        $user = UserModel::getAlluser();
+        $sub = SubModel::getSidList();
+        $ticket = TicketModel::getAllTicket();
+        $admin['usercount'] = count($user['userObj']);
+        $admin['subcount'] = count($sub['subObj']);
+        $admin['ticketcount'] = count($ticket['list']);
+        $this->assign([
+            'panel' => $admin
+        ]);
         return $this->fetch();
     }
-    public function adminLogin(){
+
+    public function chart()
+    {
+        return $this->fetch();
+    }
+
+    public function adminLogin()
+    {
         return $this->fetch('login');
     }
 }
