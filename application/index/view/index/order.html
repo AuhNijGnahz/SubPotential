@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{$describe}">
+    <meta name="keywords" content="{$seo}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <title>确认订单 - {$title} - {$subtitle}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/plugins/wizard/steps.css" rel="stylesheet">
+    <!--alerts CSS -->
+    <link href="/static/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="/static/assets/css/toastr.min.css" rel="stylesheet">
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="/static/assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header card-no-border logo-center">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index">
+                    <!-- Logo icon -->
+                    <b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!--<img src="/static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
+                        <!-- Light Logo icon -->
+                        <!--<img src="/static/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
+                        <i class="fa fa-modx light-logo"> <span>{title}</span></i>
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <!-- This is  -->
+                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                                            href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                </ul>
+                <!-- ============================================================== -->
+                <!-- User profile and search -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav my-lg-0">
+                    <!-- ============================================================== -->
+                    <!-- Messages -->
+                    <!-- ============================================================== -->
+
+                    <!-- ============================================================== -->
+                    <!-- End Messages -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Profile -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                src="{$avatar}" alt="user" class="profile-pic"/></a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="{$avatar}" alt="user">
+                                        </div>
+                                        <div class="u-text" style="width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                            <h4>{$me.username}</h4>
+                                            <p class="text-muted">{$me.email}</p>
+                                            <div><h6><font color="{$group.groupcolor}">{$group.groupname}</font></h6></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-user"></i> 个人中心</a></li>
+
+
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-settings"></i> 设置</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/user/logout"><i class="fa fa-power-off"></i> 退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- Language -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link waves-effect waves-dark" href="javascript:;"><i
+                                class="flag-icon flag-icon-cn"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li>
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span
+                                class="hide-menu">控制台</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/">主控制台</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-widgets"></i><span
+                                class="hide-menu">订阅管理</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/mySubscription">我的订阅</a></li>
+                            <li><a href="/index/index/buyRecord">购买记录</a></li>
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-shopping"></i><span
+                                class="hide-menu">商店</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li></li>
+                            <a href="/index/index/subscriptions">全部商品</a></li>
+                            <li><a href="/index/index/charge">充值</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-ticket-account"></i><span
+                                class="hide-menu">工单</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/ticket">工单列表</a></li>
+                            <li><a href="/index/index/newTicket">创建工单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 col-8 align-self-center">
+                    <h3 class="text-themecolor m-b-0 m-t-0">确认订单</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">商店</a></li>
+                        <li class="breadcrumb-item active">确认订单</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <!-- Validation wizard -->
+            <div class="row" id="validation">
+                <div class="col-12">
+                    <div class="card wizard-content">
+                        <div class="card-body">
+                            <form class="validation-wizard wizard-circle">
+                                <!-- Step 1 -->
+                                <h6>第一步<br/>
+                                    <small>确认产品信息</small>
+                                </h6>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="sid"> 商品ID : </label>
+                                                <input type="text" class="form-control required" disabled
+                                                       value="#{$sub.0.sid}" id="sid">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="sname"> 商品名 : </label>
+                                                <input type="text" class="form-control required" disabled
+                                                       value="{$sub.0.sname}" id="sname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="des"> 商品介绍 : </label>
+                                                <textarea type="email" rows="6" class="form-control required" disabled
+                                                          id="des">{$sub.0.des}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Step 2 -->
+                                <h6>第二步<br/>
+                                    <small>选择订阅方案</small>
+                                </h6>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="alert alert-success">
+                                                    <h3 class="text-success"><i class="fa fa-check-circle"></i> 提醒您</h3>
+                                                    {if $sub.0.renewdiscount>=1}当前产品没有续费优惠{else
+                                                    /}此产品在续费时可享受{$sub.0.renewdiscount*10}折优惠！{/if}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div>
+                                                    <label>选择一个合适的订阅方案 :</label>
+                                                    <div>
+                                                        {volist name="price" id="p"}
+                                                        {if condition="($p.method==='余额') and ($p.status==='启用')"}
+                                                        <input id="radio_{$p.id}" name="price" type="radio"
+                                                               data-id="{$p.id}"
+                                                               class="price with-gap radio-col-purple"/>
+                                                        <label data-id="{$p.id}" class="price" for="radio_{$p.id}" data-toggle="tooltip" title="使用余额支付">{$p.pname}
+                                                            -
+                                                            <i class="fa fa-cny"></i>{:number_format($p.price,2)}</label>
+                                                        <br/>
+                                                        {elseif condition="($p.method==='积分') and ($p.status==='启用')"}
+                                                        <input id="radio_{$p.id}" name="price" type="radio"
+                                                               data-id="{$p.id}"
+                                                               class="price with-gap radio-col-purple"/>
+                                                        <label data-id="{$p.id}" class="price" for="radio_{$p.id}" data-toggle="tooltip" title="使用积分支付">{$p.pname}
+                                                            - <i class="fa fa-diamond"></i>{:number_format($p.price,2)}</label>
+                                                        <br/>
+                                                        {/if}
+                                                        {/volist}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Step 3 -->
+                                <h6>第三步<br/>
+                                    <small>使用优惠代码</small>
+                                </h6>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>请输入优惠代码（如果您有的话，没有就直接下一步吧） :</label>
+                                                <div class="input-group">
+                                                    <input id="coupon" type="text" class="form-control">
+                                                    <button id="couponcheck" class="btn btn-outline-success waves-effect"
+                                                            type="button">验证代码
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Step 4 -->
+                                <h6>第四步<br/>
+                                    <small>确认订单及付款</small>
+                                </h6>
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card card-body printableArea">
+                                                <h3><b>确认订单</b> <span class="pull-right">#{$sub.0.sid}</span></h3>
+                                                <hr>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="pull-left">
+                                                            <address>
+                                                                <h3> &nbsp;<b class="text-danger">{$sub.0.sname}</b></h3>
+                                                                <p class="text-muted m-l-5">请您,
+                                                                    <br/> 认真确认以下信息是否正确,
+                                                                    <br/> 如有错误请返回修改,
+                                                                    <br/> 一旦支付，将无法撤回！</p>
+                                                            </address>
+                                                        </div>
+                                                        <div class="pull-right text-right">
+                                                            <address>
+                                                                <h3>授权给,</h3>
+                                                                <h4 class="font-bold">{$me.username}</h4>
+                                                                <p class="text-muted m-l-30">邮箱地址,
+                                                                    <br/> {$me.email},
+                                                                    </p>
+                                                                <p class="m-t-30"><b>当前时间 :</b> <i class="fa fa-calendar"></i> {:date("Y-m-d H:i:s")}</p>
+                                                            </address>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="table-responsive m-t-40" style="clear: both;">
+                                                            <table class="table table-hover">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th class="text-center">#</th>
+                                                                    <th>描述</th>
+                                                                    <th class="text-right">数量</th>
+                                                                    <th class="text-right">单价</th>
+                                                                    <th class="text-right">总价</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td class="text-center">{$sub.0.sid}</td>
+                                                                    <td id="pname"></td>
+                                                                    <td class="text-right">1</td>
+                                                                    <td class="text-right mainprice"></td>
+                                                                    <td class="text-right mainprice"></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="pull-right m-t-30 text-right">
+                                                            <p class="text-right">附加项目</p>
+                                                            <span id="dis"></span>
+                                                            <hr>
+                                                            <h3><b>总计 : </b><span id="disprice">--</span></h3>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+                                                        <hr>
+                                                        <div class="text-right">
+                                                            <button id="purchase" class="btn btn-danger waves-effect" type="button"> 立即支付 </button>
+                                                            <button id="print" class="btn btn-default btn-outline" type="button"> <span><i class="fa fa-print"></i> 打印 </span> </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer --><br/>
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2018 紫旭网络
+            <br>
+            <a href="javascript:;">备案号</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="/static/assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="/static/assets/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/static/assets/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="/static/assets/js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<script src="/static/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!--Custom JavaScript -->
+<script>
+    var groupdiscount = {$groupdiscount};
+    var renewdiscount = {$renewdiscount};
+</script>
+<script src="/static/assets/js/toastr.min.js"></script>
+<script src="/static/assets/js/custom.min.js"></script>
+<script src="/static/assets/js/order.js"></script>
+<script src="/static/assets/js/jquery.PrintArea.js" type="text/JavaScript"></script>
+<!--<script src="/static/assets/plugins/moment/min/moment.min.js"></script>-->
+<script src="/static/assets/plugins/wizard/jquery.steps.min.js"></script>
+<script src="/static/assets/plugins/wizard/jquery.validate.min.js"></script>
+<!-- Sweet-Alert  -->
+<script src="/static/assets/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- ============================================================== -->
+<script>
+    $(function () {
+        $('a[href="#next"]').text('下一步').addClass('btn waves-effect').on('click',function () {
+            if($('a[href="#finish"]').parent().attr('aria-hidden')=='false'){
+                $('div.actions').remove();
+            }
+        });
+        $('a[href="#previous"]').text('上一步').addClass('btn waves-effect');
+        $('a[href="#finish"]').text('提交订单').addClass('btn waves-effect');
+    })
+</script>
+</body>
+
+</html>

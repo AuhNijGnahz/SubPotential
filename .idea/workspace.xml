@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1494501b-0fff-493a-9fef-22fce5ad35dc" name="默认" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="viewticket.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/index/viewticket.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3420">
+              <caret line="228" column="58" selection-start-line="228" selection-start-column="58" selection-end-line="228" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/index/login1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/view/index/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/index/view/index/index2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/static/assets/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>login</find>
+      <find>$_POST</find>
+      <find>encryp</find>
+      <find>verify</find>
+      <find>self::sendEmail</find>
+      <find>$url</find>
+      <find>bindGroup</find>
+      <find>/plugin/</find>
+      <find>/static/assets/plugins/</find>
+      <find>紫旭产品</find>
+      <find>index()</find>
+      <find>Index();</find>
+      <find>index</find>
+      <find>checkO</find>
+      <find>give</find>
+      <find>chargeDo</find>
+      <find>AdminControl</find>
+      <find>Hanson\Youzan</find>
+      <find>Youzan</find>
+      <find>Hanson\</find>
+      <find>Hanson</find>
+      <find>ta_active</find>
+      <find>ca_active</find>
+      <find>activeStatus</find>
+      <find>UserHandle::activeStatus</find>
+      <find>createtick</find>
+      <find>&lt;span&gt;紫旭产品订阅平台&lt;/span&gt;</find>
+      <find>{$title}</find>
+      <find>紫旭产品订阅平台</find>
+      <find>紫旭产品订阅平台&lt;</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>$c</replace>
+      <replace>ticketClass</replace>
+      <replace>&lt;li&gt;&lt;a href=&quot;/index/index/newTicket&quot;&gt;创建工单&lt;/a&gt;&lt;/li&gt;</replace>
+      <replace>u-text&quot; style=&quot;width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;&quot;&gt;</replace>
+      <replace>u-text&quot; style=&quot;width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;&quot;</replace>
+      <replace>u-text&quot; style=&quot;width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;</replace>
+      <replace>me.username}&lt;/h4&gt;</replace>
+      <replace>$t</replace>
+      <replace>a href=&quot;javascrtip:;&quot;</replace>
+      <replace>/static/assets</replace>
+      <replace>待您</replace>
+      <replace>getAgentTicket</replace>
+      <replace>text-</replace>
+      <replace>$ticket</replace>
+      <replace>ticket</replace>
+      <replace>mySubscription?</replace>
+      <replace>$record</replace>
+      <replace>subscriptions?</replace>
+      <replace>buyRecord?</replace>
+      <replace>safese</replace>
+      <replace>phoneactive</replace>
+      <replace>&lt;li&gt;&lt;a href=&quot;/index/index/account&quot;&gt;&lt;i class=&quot;ti-settings&quot;&gt;&lt;/i&gt; 设置&lt;/a&gt;&lt;/li&gt;</replace>
+      <replace />
+      <replace>notice</replace>
+      <replace>$data</replace>
+      <replace>Admin_Control</replace>
+      <replace>YouZ</replace>
+      <replace>&lt;span&gt;紫旭产品订阅平台&lt;/span&gt;</replace>
+      <replace>&lt;span&gt;{$title}&lt;/span&gt;</replace>
+      <replace>{title}&lt;</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/public/static</dir>
+      <dir>$PROJECT_DIR$/public/static/assets/js</dir>
+      <dir>$PROJECT_DIR$/application/admin/view/index</dir>
+      <dir>$PROJECT_DIR$/application/admin/view/LogControl</dir>
+      <dir>$PROJECT_DIR$/application/index/view/index</dir>
+      <dir>$PROJECT_DIR$/application/admin/view</dir>
+      <dir>$PROJECT_DIR$/extend/YouZan</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/application/index</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/application/admin/controller/WebControl.php" />
+        <option value="$PROJECT_DIR$/application/admin/model/WebModel.php" />
+        <option value="$PROJECT_DIR$/application/admin/view/WebControl/websetting.html" />
+        <option value="$PROJECT_DIR$/application/admin/model/Mail.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Mail.php" />
+        <option value="$PROJECT_DIR$/application/index/model/OrderHandle.php" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/custom.js" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/custom.min.js" />
+        <option value="$PROJECT_DIR$/extend/Captcha/GeetestLib.php" />
+        <option value="$PROJECT_DIR$/extend/Captcha/Geetestlib.php" />
+        <option value="$PROJECT_DIR$/application/common.php" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/account.js" />
+        <option value="$PROJECT_DIR$/application/index/model/SubHandle.php" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/mysub.js" />
+        <option value="$PROJECT_DIR$/application/index/view/index/newticket.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/subscription.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/mysubscription.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/charge.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/account.html" />
+        <option value="$USER_HOME$/Downloads/背景动画/index.html" />
+        <option value="$USER_HOME$/Downloads/粒子特效/index.html" />
+        <option value="$PROJECT_DIR$/application/database.php" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/charge.js" />
+        <option value="$PROJECT_DIR$/extend/Youzanpay/InnerTextServer.php" />
+        <option value="$PROJECT_DIR$/extend/Youzanpay/PayService.php" />
+        <option value="$PROJECT_DIR$/extend/Youzanpay/TradeService.php" />
+        <option value="$PROJECT_DIR$/extend/Youzanpay/YouzanYunService.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/CallBack.php" />
+        <option value="$PROJECT_DIR$/extend/Hanson/Foundation/Config.php" />
+        <option value="$PROJECT_DIR$/extend/Slince/YouzanPay/YouzanPay.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/extend/Damonto/youzanpay/Core/Token.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/BasicControl.php" />
+        <option value="$PROJECT_DIR$/extend/Damon/Core/Token.php" />
+        <option value="$PROJECT_DIR$/extend/Damon/Support/Gateway.php" />
+        <option value="$PROJECT_DIR$/extend/Damon/YouzanPay.php" />
+        <option value="$PROJECT_DIR$/extend/Damon/QrCode/QrCode.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Payment1.php" />
+        <option value="$PROJECT_DIR$/application/index/model/UserHandle.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/User.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Payment.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Active.php" />
+        <option value="$PROJECT_DIR$/application/index/model/ActiveHandle.php" />
+        <option value="$PROJECT_DIR$/application/index/model/ChargeHandle.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
+        <option value="$PROJECT_DIR$/application/index/view/index/viewticket.html" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/particles.min.js" />
+        <option value="$PROJECT_DIR$/public/static/assets/js/index.js" />
+        <option value="$PROJECT_DIR$/application/index/view/index/login1.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/register.html" />
+        <option value="$PROJECT_DIR$/application/index/view/index/index2.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/public/static/assets/plugins/dropify/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP7.1">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/topthink/think-helper" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-image" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-queue" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-captcha" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-mongo" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-migration" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/topthink/think-installer" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="148" />
+    <option name="y" value="65" />
+    <option name="width" value="1532" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="extend" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SearchEverywhereHistoryKey" value="ret&#9;null&#9;null&#10;le&#9;FILE&#9;file:///Applications/MAMP/htdocs/cqpadmin/application/index/model/UserHandle.php" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last.edited.regexp" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/extend/Hanson" />
+      <recent name="$PROJECT_DIR$/extend" />
+      <recent name="$PROJECT_DIR$/public/static/assets/images" />
+      <recent name="$PROJECT_DIR$/extend/Damon" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/static/assets/js" />
+      <recent name="$PROJECT_DIR$/extend/GuzzleHttp" />
+      <recent name="$PROJECT_DIR$/extend/Illuminate/Config" />
+      <recent name="$PROJECT_DIR$/extend" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="extend" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/extend" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.extend" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1494501b-0fff-493a-9fef-22fce5ad35dc" name="默认" comment="" />
+      <created>1535455947852</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535455947852</updated>
+      <workItem from="1535455949329" duration="90099000" />
+      <workItem from="1535861369353" duration="13312000" />
+      <workItem from="1535886213316" duration="115000" />
+      <workItem from="1535956021454" duration="2211000" />
+      <workItem from="1535959455236" duration="58016000" />
+      <workItem from="1536495047840" duration="38902000" />
+      <workItem from="1536681342149" duration="29353000" />
+      <workItem from="1536840914924" duration="15126000" />
+      <workItem from="1536931268542" duration="5438000" />
+      <workItem from="1537065368013" duration="15708000" />
+      <workItem from="1537239434239" duration="7549000" />
+      <workItem from="1537323750074" duration="2497000" />
+      <workItem from="1537337493459" duration="5311000" />
+      <workItem from="1537364990979" duration="25000" />
+      <workItem from="1537446452148" duration="8168000" />
+      <workItem from="1537496245406" duration="209117000" />
+      <workItem from="1539231403541" duration="18671000" />
+      <workItem from="1539438283870" duration="105000" />
+      <workItem from="1539443598801" duration="6626000" />
+      <workItem from="1539524590429" duration="35165000" />
+      <workItem from="1539956369522" duration="1865000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="extend - 2018.10.16 at 17h 13m 57s.xml">
+      <configuration name="extend" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="563379000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="148" y="65" width="1532" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3293979" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32716763" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23302872" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3283237" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="检查结果" order="12" weight="0.32967034" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/extend/Monolog/Test/TestCase.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Symfony/Exception/RequestExceptionInterface.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Tightenco/Collect/Support/Traits/Macroable.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Hanson/Foundation/Config.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Hanson/Foundation/Foundation.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Slince/Amount.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Slince/ApiContext.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Slince/YouzanPay.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Slince/YouzanPay/Amount.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Psr/AppendStream.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Psr/Http/AppendStream.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Psr/Http/Message/ServerRequest.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Slince/YouzanPay/YouzanPay.php" />
+    <entry file="file://$PROJECT_DIR$/extend/Psr/Http/Message/AppendStream.php" />
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Damonto/youzanpay/Core/Token.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/vendor/composer/LICENSE" />
+    <entry file="file://$PROJECT_DIR$/vendor/composer/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thinkphp/tpl/page_trace.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/BasicControl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#129#160#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Pimple/Psr11/Container.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Doctrine/Common/Cache/Cache.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Illuminate/Config/Repository.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Damon/YouzanPay.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Damon/Core/Token.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Damon/QrCode/QrCode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Damon/Support/Gateway.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/GuzzleHttp/Client.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extend/Zttp/Zttp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="174" column="46" lean-forward="true" selection-start-line="174" selection-start-column="46" selection-end-line="174" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <element signature="e#125#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/CallBack.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="194" column="9" lean-forward="true" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+          <folding>
+            <element signature="e#129#160#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/model/logModel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/ChargeHandle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/ActiveHandle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/UserHandle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="272" column="36" selection-start-line="272" selection-start-column="36" selection-end-line="272" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Active.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#3;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#h1#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/logControl.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/SubControl/card.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2036">
+          <caret line="528" column="49" selection-start-line="528" selection-start-column="49" selection-end-line="528" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="574" column="9" selection-start-line="574" selection-start-column="9" selection-end-line="574" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/viewticket.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="228" column="58" selection-start-line="228" selection-start-column="58" selection-end-line="228" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/assets/js/canvas-particle.js" />
+    <entry file="file://$PROJECT_DIR$/public/static/assets/js/particles.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1657" selection-start-line="7" selection-start-column="1657" selection-end-line="7" selection-end-column="1657" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/static/assets/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/login1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../cqpadmin Publisher/application/index/view/index/index2.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/view/index/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="48" column="25" lean-forward="true" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

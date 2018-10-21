@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{$describe}">
+    <meta name="keywords" content="{$seo}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <title>{$title} - {$subtitle}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Vector CSS -->
+    <link href="/static/assets/css/toastr.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="/static/assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header fix-sidebar card-no-border logo-center">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index">
+                    <!-- Logo icon -->
+                    <b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!--<img src="/static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
+                        <!-- Light Logo icon -->
+                        <!--<img src="/static/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
+                        <i class="fa fa-modx light-logo"> <span>{title}</span></i>
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <!-- This is  -->
+                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                                            href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                </ul>
+                <!-- ============================================================== -->
+                <!-- User profile and search -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav my-lg-0">
+                    <!-- ============================================================== -->
+                    <!-- Messages -->
+                    <!-- ============================================================== -->
+
+                    <!-- ============================================================== -->
+                    <!-- End Messages -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Profile -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                src="{$avatar}" alt="user" class="profile-pic"/></a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="{$avatar}" alt="user">
+                                        </div>
+                                        <div class="u-text"
+                                             style="width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                            <h4>{$me.username}</h4>
+                                            <p class="text-muted">{$me.email}</p>
+                                            <div><h6><font color="{$group.groupcolor}">{$group.groupname}</font></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-user"></i> 个人中心</a></li>
+
+
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-settings"></i> 设置</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/user/logout"><i class="fa fa-power-off"></i> 退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- Language -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link waves-effect waves-dark" href="javascript:;"><i
+                                class="flag-icon flag-icon-cn"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="active">
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span
+                                class="hide-menu">控制台</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li class="active"><a href="/index/">主控制台</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
+                                class="hide-menu">订阅管理</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/mySubscription">我的订阅</a></li>
+                            <li><a href="/index/index/buyRecord">购买记录</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
+                                class="hide-menu">商店</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/subscriptions">全部商品</a></li>
+                            <li><a href="/index/index/charge">充值</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-ticket-account"></i><span
+                                class="hide-menu">工单</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/ticket">工单列表</a></li>
+                            <li><a href="/index/index/newTicket">创建工单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 col-8 align-self-center">
+                    <h3 class="text-themecolor">主控制台</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">主页</a></li>
+                        <li class="breadcrumb-item active">主控制台</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <!-- Row -->
+            <div class="row">
+                <div class="col-lg-4 col-md-12">
+                    <div class="card card-inverse card-primary">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="m-r-20 align-self-center">
+                                    <h1 class="text-white"><i class="mdi mdi-currency-usd"></i></h1></div>
+                                <div>
+                                    <h3 class="card-title">钱包</h3>
+                                    <h6 class="card-subtitle">Balance</h6></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 align-self-center">
+                                    <h5 class="font-light text-white">现金：<i class="fa fa-cny"></i> {$me.cash}</h5>
+                                    <h5 class="font-light text-white">积分：<i class="fa fa-diamond"></i> {$me.credit}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="card card-inverse card-success">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="m-r-20 align-self-center">
+                                    <h1 class="text-white"><i class="fa fa-modx"></i></h1></div>
+                                <div>
+                                    <h3 class="card-title">有效订阅</h3>
+                                    <h6 class="card-subtitle">Available Subscription</h6></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 align-self-center">
+                                    <h5 class="font-light text-white">{$subcount}个</h5>
+                                    <small class="font-light text-white">其中有 {$willexpire} 个即将过期</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="card card-inverse card-info">
+                        <div class="card-body">
+                            <div class="d-flex">
+                                <div class="m-r-20 align-self-center">
+                                    <h1 class="text-white"><i class="mdi mdi-ticket-account"></i></h1></div>
+                                <div>
+                                    <h3 class="card-title">工单</h3>
+                                    <h6 class="card-subtitle">Support Ticket</h6></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 align-self-center">
+                                    <h5 class="font-light text-white">{$ticketcount}个</h5>
+                                    <small class="font-light text-white">其中有 {$t3} 个等待您处理</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row -->
+            <!-- Row -->
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="card blog-widget">
+                        <div class="card-body">
+                            <div class="blog-image"><img src="/static/assets/images/big/img2.jpg" alt="img"
+                                                         class="img-responsive"/></div>
+                            <h3>紫旭产品授权平台 - V1.0</h3>
+                            <label class="label label-rounded label-success">紫旭</label>
+                            <p class="m-t-20 m-b-20">
+                                目前本站为演示站点，前台功能已完成99%，后台仍在完善中。大众免费将在近期完善后开源！
+                                欢迎您加入交流群：<a target="_blank"
+                                            href="//shang.qq.com/wpa/qunwpa?idkey=962d6c7987a95649db46c98b286af4b9a0231be311495e5fc0c9965f331047c4">点我加群</a>
+                            </p>
+                            <div class="d-flex">
+                                <div class="read"><a href="javascript:void(0)"
+                                                     class="btn waves-effect waves-dark btn-rounded btn-outline-primary">联系购买</a>
+                                </div>
+                                <div class="ml-auto">
+                                    <a href="javascript:void(0)" class="link m-r-10 " data-toggle="tooltip"
+                                       title="Like"><i class="mdi mdi-heart-outline"></i></a> <a
+                                        href="javascript:void(0)" class="link" data-toggle="tooltip" title="Share"><i
+                                        class="mdi mdi-share-variant"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">公告</h4>
+                            <h5 class="card-subtitle">只显示最新的6条公告</h5>
+                            <div class="table-responsive">
+                                <table class="table color-table success-table">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>公告标题</th>
+                                        <th>作者</th>
+                                        <th>发布时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="anlist" id="an" length="6"}
+                                    <tr>
+                                        <td>{$an.id}</td>
+                                        <td>{$an.title}</td>
+                                        <td>{$an.author}</td>
+                                        <td>{$an.pubdate}</td>
+                                        <td>
+                                            <a data-toggle="modal" data-target=".announcemodal"
+                                               class="an_view btn btn-sm btn-rounded waves-effect btn-outline-primary"
+                                               data-id="{$an.id}" href="javascript:;">
+                                                <i class="mdi mdi-looks"></i> 查看
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {/volist}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade announcemodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                     aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myLargeModalLabel">公告</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body">
+                                <h4 id="antitle"></h4>
+                                <p id="author"></p>
+                                <p id="ancontent"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger waves-effect text-left"
+                                        data-dismiss="modal">关闭
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+            </div>
+            <!-- Row -->
+            <!-- Row -->
+            <!-- Row -->
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer --><br/>
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2018 紫旭网络
+            <br>
+            <a href="javascript:;">备案号</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+<script src="/static/assets/js/jquery.form.js"></script>
+<script src="/static/assets/js/toastr.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="/static/assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="/static/assets/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/static/assets/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="/static/assets/js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
+<script src="/static/assets/js/custom.min.js"></script>
+<script src="/static/assets/js/index.js"></script>
+<!-- ============================================================== -->
+<!-- This page plugins -->
+<!-- ============================================================== -->
+<!-- Vector map JavaScript -->
+<script src="/static/assets/js/dashboard2.js"></script>
+<!-- ============================================================== -->
+</body>
+
+</html>

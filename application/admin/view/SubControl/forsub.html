@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$coupon} - 紫旭订阅管理平台 - 查看适用范围</title>
+    <meta name="description" content="这是后台！">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="icon" type="image/png" href="/static/admin-assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/admin-assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+</head>
+<body>
+<table class="am-table am-table-striped am-table-hover table-main">
+    <thead>
+    <tr>
+        <th class="table-sid">适用的产品id(#all表示所有产品都可用)</th>
+    </tr>
+    </thead>
+    <tbody>
+    {volist name="forsub" id="cp"}
+    <tr>
+        <td><a href="/admin/subControl/editSubIndex?sid={$cp.sid}">#{$cp.sid}</a></td>
+    </tr>
+    {/volist}
+    </tbody>
+</table>
+</body>
+</html>

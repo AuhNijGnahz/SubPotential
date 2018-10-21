@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{$describe}">
+    <meta name="keywords" content="{$seo}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <title>个人中心 - {$title} - {$subtitle}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/assets/plugins/dropify/dist/css/dropify.min.css">
+    <!--alerts CSS -->
+    <link href="/static/assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+    <!-- Footable CSS -->
+    <link href="/static/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
+    <link href="/static/assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet"/>
+    <!-- Custom CSS -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <link href="/static/assets/css/toastr.min.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="/static/assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="fix-header card-no-border logo-center">
+<!-- ============================================================== -->
+<!-- Preloader - style you can find in spinners.css -->
+<!-- ============================================================== -->
+<div class="preloader">
+    <svg class="circular" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <!-- ============================================================== -->
+            <!-- Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/index">
+                    <!-- Logo icon -->
+                    <b>
+                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <!-- Dark Logo icon -->
+                        <!--<img src="/static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
+                        <!-- Light Logo icon -->
+                        <!--<img src="/static/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
+                        <i class="fa fa-modx light-logo"> <span>{title}</span></i>
+                    </b>
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                </a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse">
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <!-- This is  -->
+                    <li class="nav-item"><a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
+                                            href="javascript:void(0)"><i class="mdi mdi-menu"></i></a></li>
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                </ul>
+                <!-- ============================================================== -->
+                <!-- User profile and search -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav my-lg-0">
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Messages -->
+                    <!-- ============================================================== -->
+
+                    <!-- ============================================================== -->
+                    <!-- End Messages -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Profile -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                src="{$avatar}" alt="user" class="profile-pic"/></a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li>
+                                    <div class="dw-user-box">
+                                        <div class="u-img"><img src="{$avatar}" alt="user">
+                                        </div>
+                                        <div class="u-text"
+                                             style="width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                            <h4>{$me.username}</h4>
+                                            <p class="text-muted">{$me.email}</p>
+                                            <div><h6><font color="{$group.groupcolor}">{$group.groupname}</font></h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-user"></i> 个人中心</a></li>
+
+
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/index/account"><i class="ti-settings"></i> 设置</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/index/user/logout"><i class="fa fa-power-off"></i> 退出登录</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- Language -->
+                    <!-- ============================================================== -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link waves-effect waves-dark" href="javascript:;"><i
+                                class="flag-icon flag-icon-cn"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li>
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span
+                                class="hide-menu">控制台</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/">主控制台</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-widgets"></i><span
+                                class="hide-menu">订阅管理</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/mySubscription">我的订阅</a></li>
+                            <li><a href="/index/index/buyRecord">购买记录</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="javascript:;" aria-expanded="false"><i
+                                class="mdi mdi-shopping"></i><span
+                                class="hide-menu">商店</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/subscriptions">全部商品</a></li>
+                            <li><a href="/index/index/charge">充值</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-ticket-account"></i><span
+                                class="hide-menu">工单</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="/index/index/ticket">工单列表</a></li>
+                            <li><a href="/index/index/newTicket">创建工单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 col-8 align-self-center">
+                    <h3 class="text-themecolor m-b-0 m-t-0">个人中心</h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">首页</a></li>
+                        <li class="breadcrumb-item active">个人中心</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-4 col-xlg-3 col-md-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <center class="m-t-30"><img src="{$avatar}" class="img-circle"
+                                                        width="150" height="150"/>
+                                <h4 class="card-title m-t-10">{$me.username}</h4>
+                                <h6 class="card-subtitle"><font color="{$group.groupcolor}">{$group.groupname}</font>
+                                </h6>
+                                <div class="row text-center justify-content-md-center">
+                                    <div class="col-4"><a href="javascript:void(0)" class="link"><i
+                                            class="icon-people"></i> <font class="font-medium">254</font></a></div>
+                                    <div class="col-4"><a href="javascript:void(0)" class="link"><i
+                                            class="icon-picture"></i> <font class="font-medium">54</font></a></div>
+                                </div>
+                            </center>
+                        </div>
+                        <div>
+                            <hr>
+                        </div>
+                        <div class="card-body">
+                            <small class="text-muted">用户ID</small>
+                            <h6>{$me.uid}</h6>
+                            <small class="text-muted p-t-30 db">电子邮箱</small>
+                            <h6>{$me.email}</h6>
+                            <small class="text-muted p-t-30 db">注册时间</small>
+                            <h6><i class="fa fa-clock-o"></i> {$me.regdate}</h6>
+                            <!--<small class="text-muted p-t-30 db">Social Profile</small>-->
+                            <!--<br/>-->
+                            <!--<button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>-->
+                            <!--<button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>-->
+                            <!--<button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>-->
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+                <!-- Column -->
+                <div class="col-lg-8 col-xlg-9 col-md-7">
+                    <div class="card">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs profile-tab" role="tablist">
+                            <li class="nav-item"><a class="nav-link waves-effect active" data-toggle="tab"
+                                                    href="#profile" role="tab">个人信息</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link waves-effect" data-toggle="tab" href="#safesettings"
+                                                    role="tab">安全设置</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!--个人资料-->
+                            <div class="tab-pane active" id="profile" role="tabpanel">
+                                <div class="card-body">
+                                    <h4 class="font-medium">我的资料</h4>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>用户名</span>
+                                        </div>
+                                        <div class="col-md-9 col-xs-6 m-auto">
+                                            <span>{$me.username}</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>专享折扣</span>
+                                        </div>
+                                        <div class="col-md-9 col-xs-6 m-auto">
+                                            <span>{$group.groupdiscount*10}折</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12 col-xs-12 b-r">
+                                            <button type="button" id="deleteacc"
+                                                    class="btn btn-outline-danger btn-rounded waves-effect"><i
+                                                    class="mdi mdi-delete-forever"></i> 删除我的账户
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <h4 class="font-medium m-t-30">我的身份</h4>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>身份</span>
+                                        </div>
+                                        <div class="col-md-9 col-xs-6 m-auto">
+                                            <span><font color="{$group.groupcolor}">{$group.groupname}</font></span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>到期时间</span>
+                                        </div>
+                                        <div class="col-md-9 col-xs-6 m-auto">
+                                            <span>{$me.expiretime}</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>有效期</span>
+                                        </div>
+                                        <div class="col-md-9 col-xs-6 m-auto">
+                                            <span>{:number_format(strtotime($me.expiretime) / 3600 / 24 - time() / 3600 /
+                                                24)}天</span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h4 class="font-medium m-t-30">最近10次登录IP</h4>
+                                    <h6>如果您的登录IP有异常，请立即修改密码！</h6>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table id="demo-foo-accordion" class="table table-hover">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>IP</th>
+                                                        <th>归属地</th>
+                                                        <th>登录时间</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {volist name="loginrecord" id="l" length="10"}
+                                                    <tr>
+                                                        <td>{$l.ip}</td>
+                                                        <td>{$l.location}</td>
+                                                        <td><i class="fa fa-clock-o"></i> {$l.logindate}</td>
+                                                    </tr>
+                                                    {/volist}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--安全设置-->
+                            <div class="tab-pane" id="safesettings" role="tabpanel">
+                                <div class="card-body">
+                                    <div id="safe_email" class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>电子邮箱</span>
+                                        </div>
+                                        <div class="col-md-5 col-xs-6 m-auto">
+                                            <span>当前登录邮箱 {$me.email}</span>
+                                        </div>
+                                        <div class="col-md-4 col-xs-6 m-auto">
+                                            {if $me.emailactive===0}
+                                            <a class="verifyemail" href="javascript:;">
+                                                <i class="fa fa-exclamation-circle text-warning"> 点击验证</i>
+                                            </a>
+                                            {else /}
+                                            <i class="fa fa-check-circle text-success"> 已验证</i>
+                                            {/if}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="safe_username" class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>用户名</span>
+                                        </div>
+                                        <div class="col-md-5 col-xs-6 m-auto">
+                                            <span>您的身份标识，可与他人重复</span>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 m-auto">
+                                            <i class="fa fa-check-circle text-success"> 已设置</i>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 text-center">
+                                            <button id="changeusername"
+                                                    class="btn btn-rounded btn-outline-info waves-effect">更改
+                                            </button>
+                                        </div>
+                                        <div id="changeusernamemodel" class="modal fade" tabindex="-1" role="dialog"
+                                             style="display: none;">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title"><i class="fa fa-user"></i> 修改用户名</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <br>
+                                                        <form id="cUsernameForm" action="/index/user/changeUsername"
+                                                              method="post"
+                                                              class="form-horizontal floating-labels">
+                                                            <div class="form-group">
+                                                                <input id="username" name="username" type="text"
+                                                                       class="form-control form-control-line">
+                                                                <span class="bar"></span>
+                                                                <label for="username">输入新用户名</label>
+                                                                <small style="color: red;">变更用户名称费用：<i
+                                                                        class="fa fa-cny"></i>
+                                                                    {:number_format($group.changeusernameprice,2)} / 次
+                                                                </small>
+                                                            </div>
+                                                            <button type="button" id="CUN"
+                                                                    class="btn btn-block btn-rounded btn-success waves-effect">
+                                                                <i class="fa fa-check"></i> 提交
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="safe_pwd" class="row">
+                                        <div class="col-md-3 col-xs-12 m-auto">
+                                            <span>登录密码</span>
+                                        </div>
+                                        <div class="col-md-5 col-xs-6 m-auto">
+                                            <span>建议您定期修改密码</span>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 m-auto">
+                                            <i class="fa fa-check-circle text-success"> 已设置</i>
+                                        </div>
+                                        <div class="col-md-2 col-xs-6 text-center">
+                                            <button id="changepwd"
+                                                    class="btn btn-rounded btn-outline-info waves-effect">更改
+                                            </button>
+                                        </div>
+                                        <div id="changepwdmodel" class="modal fade" tabindex="-1" role="dialog"
+                                             style="display: none;">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title"><i class="fa fa-lock"></i> 修改密码</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <br>
+                                                        <form id="cPwdForm" action="/index/user/changePwd" method="post"
+                                                              class="form-horizontal floating-labels">
+                                                            <div class="form-group">
+                                                                <input name="oldpwd" type="password" minlength="6"
+                                                                       class="form-control form-control-line">
+                                                                <span class="bar"></span>
+                                                                <label>旧密码</label>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input name="newpwd" type="password" minlength="6"
+                                                                       class="form-control form-control-line">
+                                                                <span class="bar"></span>
+                                                                <label>新密码</label>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input name="confirm" type="password" minlength="6"
+                                                                       class="form-control form-control-line">
+                                                                <span class="bar"></span>
+                                                                <label>确认新密码</label>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="submit"
+                                                                        class="btn btn-rounded btn-block btn-success waves-effect">
+                                                                    <i class="fa fa-check"></i> 更新
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+d
+                                    </div>
+                                    <!--<hr>-->
+                                    <!--<div id="safe_phone" class="row">-->
+                                        <!--<div class="col-md-3 col-xs-12 m-auto">-->
+                                            <!--<span>安全手机</span>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-5 col-xs-6 m-auto">-->
+                                            <!--{if $me.phone===0}-->
+                                            <!--<span>最大限度提升账户安全性，建议绑定</span>-->
+                                            <!--{else /}-->
+                                            <!--<span>当前绑定手机 {:substr_replace($me.phone,"******",3,6)}</span>-->
+                                            <!--{/if}-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-2 col-xs-6 m-auto">-->
+                                            <!--{if $me.phone===0}-->
+                                            <!--<i class="fa fa-times-circle text-danger"> 未设置</i>-->
+                                            <!--{elseif $me.phoneactive===0}-->
+                                            <!--<a class="verifyemail" href="javascript:;">-->
+                                                <!--<i class="fa fa-exclamation-circle text-warning">点击验证</i>-->
+                                            <!--</a>-->
+                                            <!--{else /}-->
+                                            <!--<i class="fa fa-check-circle text-success"> 已验证</i>-->
+                                            <!--{/if}-->
+                                        <!--</div>-->
+                                        <!--<div class="col-md-2 col-xs-6 text-center">-->
+                                            <!--{if $me.phone===0}-->
+                                            <!--<button id="bindphone"-->
+                                                    <!--class="btn btn-rounded btn-outline-info waves-effect">绑定-->
+                                            <!--</button>-->
+                                            <!--{else / }-->
+                                            <!--<button id="changephone"-->
+                                                    <!--class="btn btn-rounded btn-outline-info waves-effect">更改-->
+                                            <!--</button>-->
+                                            <!--{/if}-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Column -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer --><br/>
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2018 紫旭网络
+            <br>
+            <a href="javascript:;">备案号</a>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+<script src="/static/assets/js/toastr.min.js"></script>
+<script src="/static/assets/js/jquery.form.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="/static/assets/plugins/bootstrap/js/popper.min.js"></script>
+<script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="/static/assets/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/static/assets/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="/static/assets/js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<!--Custom JavaScript -->
+<script src="/static/assets/plugins/dropify/dist/js/dropify.min.js"></script>
+<script src="/static/assets/js/custom.min.js"></script>
+<script>
+    var cprice = {
+    :
+    number_format($group.changeusernameprice, 2)
+    }
+    ;
+</script>
+<script src="/static/assets/js/account.js"></script>
+<!-- Footable -->
+<script src="/static/assets/plugins/footable/js/footable.all.min.js"></script>
+<script src="/static/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+<!--FooTable init-->
+<script src="/static/assets/js/footable-init.js"></script>
+<!-- Sweet-Alert  -->
+<script src="/static/assets/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- ============================================================== -->
+<!-- Style switcher -->
+<!-- ============================================================== -->
+<!--<script src="/static/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>-->
+</body>
+
+</html>

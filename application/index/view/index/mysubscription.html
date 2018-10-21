@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{$describe}">
+    <meta name="keywords" content="{$seo}">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <title>我的订阅 - {$title} - {$subtitle}</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/assets/css/toastr.min.css" rel="stylesheet">
+    <!-- Footable CSS -->
+    <link href="/static/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
+    <link href="/static/assets/plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="/static/assets/css/style.css" rel="stylesheet">
+    <!-- You can change the theme colors from here -->
+    <link href="/static/assets/css/colors/blue.css" id="theme" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body class="fix-header card-no-border logo-center">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-light">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/index">
+                        <!-- Logo icon -->
+                        <b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!--<img src="/static/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />-->
+                            <!-- Light Logo icon -->
+                            <!--<img src="/static/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />-->
+                            <i class="fa fa-modx light-logo"> <span>{title}</span></i>
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto mt-md-0">
+                        <!-- This is  -->
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Profile -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
+                                    src="{$avatar}" alt="user" class="profile-pic"/></a>
+                            <div class="dropdown-menu dropdown-menu-right scale-up">
+                                <ul class="dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="{$avatar}" alt="user">
+                                            </div>
+                                            <div class="u-text" style="width: 146px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                                                <h4>{$me.username}</h4>
+                                                <p class="text-muted">{$me.email}</p>
+                                                <div><h6><font color="{$group.groupcolor}">{$group.groupname}</font></h6></div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/index/index/account"><i class="ti-user"></i> 个人中心</a></li>
+
+
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/index/index/account"><i class="ti-settings"></i> 设置</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/index/user/logout"><i class="fa fa-power-off"></i> 退出登录</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Language -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:;"><i
+                                    class="flag-icon flag-icon-cn"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li>
+                            <a class="has-arrow" href="javascript:;" aria-expanded="false"><i class="mdi mdi-gauge"></i><span
+                                    class="hide-menu">控制台</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/index/">主控制台</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="has-arrow" href="javascript:;" aria-expanded="false"><i class="mdi mdi-widgets"></i><span
+                                    class="hide-menu">订阅管理</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li class="active"><a href="/index/index/mySubscription">我的订阅</a></li>
+                                <li><a href="/index/index/buyRecord">购买记录</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="javascript:;" aria-expanded="false"><i class="mdi mdi-shopping"></i><span
+                                    class="hide-menu">商店</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/index/index/subscriptions">全部商品</a></li>
+                                <li><a href="/index/index/charge">充值</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="mdi mdi-ticket-account"></i><span
+                                    class="hide-menu">工单</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="/index/index/ticket">工单列表</a></li>
+                                <li><a href="/index/index/newTicket">创建工单</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 col-8 align-self-center">
+                        <h3 class="text-themecolor m-b-0 m-t-0">我的订阅</h3>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">订阅管理</a></li>
+                            <li class="breadcrumb-item active">我的订阅</li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+                            <h3 class="text-warning"><i class="fa fa-exclamation-triangle"></i> 请注意</h3>
+                            目前订阅产品暂未对接任何机器人、软件、服务，所有产品仅供测试！
+                        </div>
+                        <!-- Column -->
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">我的订阅</h4>
+                                <h6 class="card-subtitle">查看和管理您订阅的产品</h6>
+                                <table id="demo-foo-accordion" class="table m-b-0 toggle-arrow-tiny table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th data-toggle="true"> # </th>
+                                            <th> 订阅产品名 </th>
+                                            <th> 到期时间 </th>
+                                            <th> 操作 </th>
+                                            <th data-hide="all"> 剩余天数 </th>
+                                            <th data-hide="all"> 绑定群号 </th>
+                                            <th data-hide="all"> 订阅状态 </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="mysub" id="ms"}
+                                        <tr>
+                                            <td>#{$ms.sid}</td>
+                                            <td>{$ms.sname}</td>
+                                            <td><i class="fa fa-clock-o"></i> {$ms.expiretime}</td>
+                                            <td>
+                                                {if condition="(strtotime($ms.expiretime)-time()>0)
+                                                and ($ms.status!='停用')"}
+                                                <a href="/index/index/order?sid={$ms.sid}&type=renew&renewid={$ms.id}" class="btn_renew btn btn-sm btn-success btn-rounded waves-effect"
+                                                   data-toggle="tooltip" title="续订此产品">
+                                                    <i class="mdi mdi-autorenew"></i>
+                                                </a>
+                                                {/if}
+                                                {if condition="(strtotime($ms.expiretime)-time()<=0) and
+                                                ($ms.status!='停用')"}
+                                                <a href="/index/index/order?sid={$ms.sid}" class="btn_renew btn btn-sm btn-success btn-rounded waves-effect"
+                                                   data-toggle="tooltip" title="重新订阅此产品">
+                                                    <i class="mdi mdi-restore"></i>
+                                                </a>
+                                                {/if}
+                                                {if condition="($ms.groupnum===0) and
+                                                (strtotime($ms.expiretime)-time()>0) and
+                                                ($ms.status!='停用')"}
+                                                <a href="javascript:;" class="btn_bindgroup btn btn-sm btn-secondary btn-rounded waves-effect"
+                                                   data-toggle="tooltip" title="绑定群号码">
+                                                    <i class="mdi mdi-account-settings-variant"></i>
+                                                </a>
+                                                <div id="bindGroup" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">绑定QQ群号码</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="floating-labels">
+                                                                    <div class="form-group">
+                                                                        <h4>请在下方输入您要绑定的QQ群号码</h4>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <input class="form-control" type="number" id="groupnum" />
+                                                                        <span class="bar"></span>
+                                                                        <label>QQ群号码</label>
+                                                                        <small>群号码绑定不能重复，且绑定后不能更改！</small>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div id="bindsuccess" class="alert alert-success alert-rounded" style="display: none;">
+                                                                            <i class="fa fa-check"></i> 绑定成功！
+                                                                        </div>
+                                                                        <button type="button" id="bindnow" data-id="{$ms.id}" class="btn btn-info btn-block btn-rounded waves-effect">绑定</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+                                                {/if}
+                                                {if condition="(strtotime($ms.expiretime)-time()<=0) or
+                                                ($ms.status==='停用')"}
+                                                <a href="javascript:;" data-id="{$ms.id}" class="btn_remove disabled btn btn-sm btn-danger btn-rounded waves-effect"
+                                                   data-toggle="tooltip" title="移除这个订阅">
+                                                    <i class="mdi mdi-delete-forever"></i>
+                                                </a>
+                                                {/if}
+                                            </td>
+                                            <td>
+                                                {if condition="(strtotime($ms.expiretime)-time()>0)"}
+                                                <i class="fa fa-clock-o"></i> {:number_format(strtotime($ms.expiretime)/86400-time()/86400,2)}天
+                                                {else /}
+                                                <i class="fa fa-clock-o"></i> 0天
+                                                {/if}
+                                            </td>
+                                            <td>
+                                                {if condition="($ms.groupnum==0)"}
+                                                未绑定
+                                                {else /}
+                                                {$ms.groupnum}
+                                                {/if}
+                                            </td>
+                                            <td>
+                                                {if condition="(strtotime($ms.expiretime)-time()>0)
+                                                and ($ms.status==='正常')"}
+                                                <span class="label label-table label-success">使用中</span>
+                                                {elseif condition="(strtotime($ms.expiretime)-time()<=0)"}
+                                                <span class="label label-table label-inverse">已过期</span>
+                                                {elseif condition="($ms.status==='停用')"}
+                                                <span class="label label-table label-danger">被停用</span>
+                                                {/if}
+                                            </td>
+                                        </tr>
+                                    {/volist}
+                                    </tbody>
+                                </table>
+                                <div id="pages" class="float-right">
+                                    {if $mysub->currentPage()>1}
+                                    <button id="pre" type="button" class="btn btn-secondary" data-page="/index/index/mySubscription?page={$mysub->currentPage()-1}">上一页</button>
+                                    {/if}
+                                    <div class="btn-group" role="group">
+                                        {for start="1" end="$mysub->lastPage()+1" name="page"}
+                                        <button type="button" class="pages btn {if $page==$mysub->currentPage()}btn-info{else /}btn-secondary{/if}" data-page="/index/index/mySubscription?page={$page}">{$page}</button>
+                                        {/for}
+                                    </div>
+                                    {if $mysub->currentPage()<$mysub->lastPage()}
+                                    <button id="af" type="button" class="btn btn-secondary" data-page="/index/index/mySubscription?page={$mysub->currentPage()+1}">下一页</button>
+                                    {/if}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer --><br/>
+            <!-- ============================================================== -->
+            <footer class="footer">
+                © 2018 紫旭网络
+                <br>
+                <a href="javascript:;">备案号</a>
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="/static/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="/static/assets/js/toastr.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="/static/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="/static/assets/js/jquery.slimscroll.js"></script>
+    <!--Wave Effects -->
+    <script src="/static/assets/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="/static/assets/js/sidebarmenu.js"></script>
+    <!--stickey kit -->
+    <script src="/static/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <!--Custom JavaScript -->
+    <script src="/static/assets/js/custom.min.js"></script>
+    <script src="/static/assets/js/mysub.js"></script>
+    <!-- Footable -->
+    <script src="/static/assets/plugins/footable/js/footable.all.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <!--FooTable init-->
+    <script src="/static/assets/js/footable-init.js"></script>
+    <!-- ============================================================== -->
+    <!-- Style switcher -->
+    <!-- ============================================================== -->
+    <!--<script src="/static/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>-->
+</body>
+
+</html>
