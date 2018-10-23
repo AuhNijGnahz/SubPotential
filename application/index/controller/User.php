@@ -9,7 +9,6 @@
 namespace app\index\controller;
 
 use app\index\model\UserHandle;
-use app\index\controller\BasicControl;
 use app\index\model\ActiveHandle;
 use app\index\model\IndexHandle;
 use app\index\model\Mail;

@@ -9,6 +9,7 @@
 namespace app\index\controller;
 
 use app\index\model\UserHandle;
+use IpLocation\IpLocation;
 use think\Controller;
 use think\Cookie;
 use think\Session;
@@ -28,16 +29,21 @@ class BasicControl extends Controller
             if (Cookie::has('ltoken', 'cqp_')) {
                 $logintoken = encryption(Cookie::get('ltoken', 'cqp_'), 'D');
                 $logintoken = explode('|', $logintoken);
-
                 $email = $logintoken[0];
                 $password = $logintoken[1];
                 $ip = $logintoken[2];
+                $myip = getIp();
                 $location = $logintoken[3];
                 $expiretime = $logintoken[4];
 
 //                var_dump($email);
 //                return;
                 if ($expiretime - time() <= 0) {
+                    Cookie::clear('cqp_');
+                    $this->redirect('/index/index/login');
+                    exit();
+                }
+                if ($ip != $myip) {
                     Cookie::clear('cqp_');
                     $this->redirect('/index/index/login');
                     exit();

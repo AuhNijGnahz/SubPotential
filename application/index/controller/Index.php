@@ -189,7 +189,7 @@ class Index extends BasicControl
         if (!$ticket['status']) {
             $this->error($ticket['message']);
         } else { //获取到订单信息
-            $client = UserHandle::getuserinfo($uid);
+            $client = UserHandle::getuserinfo($ticket['tObj']->uid);
             $clientgroup = UserHandle::getGroupByid($client['userObj']->groupid);
             $reply = TicketHandle::getReplyByTid($tid);
             $agent = TicketHandle::getAgent(); //获取所有客服UID
@@ -543,7 +543,7 @@ class Index extends BasicControl
         if (strlen($title) > 50 || empty($title)) {
             return json_encode(array('status' => false, 'message' => '事件描述长度不合法！'));
         }
-        $content = $request->post('content');
+        $content = RemoveXSS($request->post('content'));
         if (strlen($content) < 20) {
             return json_encode(array('status' => false, 'message' => '事件内容长度不合法！'));
         }
@@ -569,7 +569,7 @@ class Index extends BasicControl
             return json_encode(array('status' => false, 'message' => '非法操作！'));
         }
         $ticket = TicketHandle::getTicketByTid($tid);
-        $content = $request->post('content');
+        $content = RemoveXSS($request->post('content'));
         if (strlen($content) < 20) {
             return json_encode(array('status' => false, 'message' => '内容长度不合法！'));
         }
