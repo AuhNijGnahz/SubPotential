@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 14, 2018 at 05:13 PM
+-- Generation Time: Oct 26, 2018 at 10:32 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `ca_active` (
   `id` int(11) NOT NULL,
   `uid` int(11) NOT NULL COMMENT '用户ID',
-  `email` int(11) NOT NULL COMMENT '邮箱状态 0未验证 1已验证',
-  `phone` int(11) NOT NULL COMMENT '手机状态 0未验证 1已验证',
-  `recover` varchar(50) NOT NULL COMMENT '找回密码code',
-  `createtime` datetime NOT NULL COMMENT '验证码生成时间'
+  `email` int(11) NOT NULL DEFAULT '0' COMMENT '邮箱状态 0未验证 1已验证',
+  `phone` int(11) NOT NULL DEFAULT '0' COMMENT '手机状态 0未验证 1已验证',
+  `recover` varchar(50) DEFAULT NULL COMMENT '找回密码code',
+  `createtime` datetime NOT NULL DEFAULT '1970-01-01 08:00:00' COMMENT '验证码生成时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -34,7 +34,8 @@ CREATE TABLE `ca_active` (
 --
 
 INSERT INTO `ca_active` (`id`, `uid`, `email`, `phone`, `recover`, `createtime`) VALUES
-(1, 1, 0, 0, '', '0000-00-00 00:00:00');
+(1, 1, 0, 0, '', '0000-00-00 00:00:00'),
+(2, 2, 0, 0, '', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -83,7 +84,7 @@ CREATE TABLE `ca_buyrecord` (
   `uid` int(11) NOT NULL COMMENT '用户ID',
   `subname` varchar(50) NOT NULL COMMENT '商品名',
   `method` varchar(20) NOT NULL COMMENT '支付方式 cash/credit',
-  `type` int(10) NOT NULL COMMENT '购买类型 0新购/1续费',
+  `type` int(10) NOT NULL DEFAULT '0' COMMENT '购买类型 0新购/1续费',
   `price` float(9,2) NOT NULL COMMENT '支付价格',
   `purchasetime` datetime NOT NULL COMMENT '支付时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -100,8 +101,8 @@ CREATE TABLE `ca_cards` (
   `cash` float(9,2) NOT NULL COMMENT '人民币额度',
   `credit` int(11) NOT NULL COMMENT '积分额度',
   `expiretime` datetime NOT NULL COMMENT '过期时间',
-  `uid` int(11) NOT NULL COMMENT '使用者uid',
-  `usetime` datetime NOT NULL COMMENT '使用时间'
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '使用者uid',
+  `usetime` datetime NOT NULL DEFAULT '1970-01-01 08:00:00' COMMENT '使用时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -155,7 +156,12 @@ CREATE TABLE `ca_loginrecord` (
 --
 
 INSERT INTO `ca_loginrecord` (`id`, `uid`, `logindate`, `ip`, `location`) VALUES
-(1, 1, '2018-10-14 22:59:30', '0.0.0.0', 'IANA保留地址');
+(1, 1, '2018-10-14 22:59:30', '0.0.0.0', 'IANA保留地址'),
+(2, 1, '2018-10-15 20:25:39', '0.0.0.0', 'IANA保留地址'),
+(3, 1, '2018-10-16 17:21:01', '0.0.0.0', 'IANA保留地址'),
+(4, 1, '2018-10-16 19:25:23', '0.0.0.0', 'IANA保留地址'),
+(5, 1, '2018-10-21 19:31:17', '0.0.0.0', 'IANA保留地址'),
+(6, 2, '2018-10-26 14:25:11', '0.0.0.0', 'IANA保留地址');
 
 -- --------------------------------------------------------
 
@@ -169,7 +175,7 @@ CREATE TABLE `ca_mysubscribe` (
   `sid` int(11) NOT NULL COMMENT '产品id',
   `sname` varchar(50) NOT NULL COMMENT '产品名',
   `status` varchar(10) NOT NULL COMMENT '状态 正常/停用 管理员专用',
-  `groupnum` int(12) NOT NULL COMMENT '群号',
+  `groupnum` int(12) NOT NULL DEFAULT '0' COMMENT '群号',
   `starttime` datetime NOT NULL COMMENT '购买时间',
   `expiretime` datetime NOT NULL COMMENT '过期时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -186,9 +192,9 @@ CREATE TABLE `ca_price` (
   `pname` varchar(20) NOT NULL COMMENT '方案名',
   `method` varchar(10) NOT NULL COMMENT '支付类型 余额/积分',
   `status` varchar(10) NOT NULL COMMENT '状态 启用/停用',
-  `price` float(9,2) DEFAULT NULL COMMENT '价格',
+  `price` float(9,2) NOT NULL COMMENT '价格',
   `time` int(11) NOT NULL COMMENT '天数',
-  `comment` varchar(20) NOT NULL COMMENT '备注'
+  `comment` varchar(20) DEFAULT NULL COMMENT '备注'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -202,7 +208,7 @@ CREATE TABLE `ca_purchasemethod` (
   `mname` varchar(50) NOT NULL,
   `secureid` text NOT NULL COMMENT '支付接口ID',
   `securekey` text NOT NULL COMMENT '支付接口秘钥',
-  `thirdkey` text NOT NULL COMMENT '第三方参数值（如有赞云店铺ID）'
+  `thirdkey` text COMMENT '第三方参数值（如有赞云店铺ID）'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -224,7 +230,7 @@ CREATE TABLE `ca_regsetting` (
   `groupid` int(11) NOT NULL COMMENT '用户组ID',
   `emailcheck` int(11) NOT NULL COMMENT '邮箱验证 0启用 1不启用',
   `showpolicy` int(11) NOT NULL COMMENT '显示条款 0显示/1不显示',
-  `policyname` varchar(50) NOT NULL COMMENT '条款文件名',
+  `policyname` varchar(50) DEFAULT NULL COMMENT '条款文件名',
   `logincap` int(11) NOT NULL COMMENT '登录验证码 0显示、1不显示',
   `regcap` int(11) NOT NULL COMMENT '注册验证码 0显示、1不显示',
   `findcap` int(11) NOT NULL COMMENT '找回密码验证码 0显示、1不显示'
@@ -312,10 +318,17 @@ CREATE TABLE `ca_ticket` (
   `tname` varchar(50) NOT NULL COMMENT '工单标题',
   `phone` varchar(11) NOT NULL COMMENT '手机号码',
   `status` int(11) NOT NULL COMMENT '工单状态 0等待分配 1已受理 2处理中 3待您处理 4待您评价 5已结束',
-  `rate` int(11) NOT NULL COMMENT '评价 1~5星 0尚未评价',
-  `agent` int(11) NOT NULL COMMENT '接单的客服UID',
+  `rate` int(11) NOT NULL DEFAULT '0' COMMENT '评价 1~5星 0尚未评价',
+  `agent` int(11) NOT NULL DEFAULT '0' COMMENT '接单的客服UID',
   `createtime` datetime NOT NULL COMMENT '创建时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ca_ticket`
+--
+
+INSERT INTO `ca_ticket` (`tid`, `uid`, `tname`, `phone`, `status`, `rate`, `agent`, `createtime`) VALUES
+('503JT7OV', 1, '123123213', '13313331333', 5, 5, 0, '2018-10-23 22:02:32');
 
 -- --------------------------------------------------------
 
@@ -331,6 +344,14 @@ CREATE TABLE `ca_ticketreply` (
   `type` int(11) NOT NULL COMMENT '类型 0用户回复 1管理员回复',
   `replytime` datetime NOT NULL COMMENT '回复时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `ca_ticketreply`
+--
+
+INSERT INTO `ca_ticketreply` (`id`, `tid`, `uid`, `content`, `type`, `replytime`) VALUES
+(1, '503JT7OV', 1, '<p>&lt;sc<x>ript&gt;alert(1)&lt;sc<x>ript&gt;</p>', 0, '2018-10-23 22:02:32'),
+(2, '503JT7OV', 1, '<p><span st<x>yle=\"color: rgb(153 171 180);\">&lt;sc<x>ript&gt;alert(1)&lt;/sc<x>ript&gt;</span><br></p>', 0, '2018-10-23 22:03:12');
 
 -- --------------------------------------------------------
 
@@ -384,14 +405,14 @@ CREATE TABLE `ca_user` (
   `password` varchar(50) NOT NULL COMMENT '密码',
   `email` varchar(50) NOT NULL COMMENT '邮箱',
   `avatar` text NOT NULL COMMENT '头像链接',
-  `phone` int(11) NOT NULL COMMENT '手机号',
+  `phone` int(11) NOT NULL DEFAULT '0' COMMENT '手机号',
   `cash` float(9,2) NOT NULL COMMENT '余额',
   `credit` int(11) NOT NULL COMMENT '积分',
   `groupid` int(11) NOT NULL COMMENT '用户组ID',
   `expiretime` datetime NOT NULL COMMENT '用户组到期时间',
-  `referee` varchar(50) NOT NULL COMMENT '推荐人',
+  `referee` int(11) DEFAULT '0' COMMENT '推荐人',
   `regdate` datetime NOT NULL COMMENT '注册时间',
-  `lastlogindate` datetime NOT NULL COMMENT '最后登录时间',
+  `lastlogindate` datetime DEFAULT '1970-01-01 08:00:00' COMMENT '最后登录时间',
   `status` int(11) NOT NULL COMMENT '状态 0正常1未验证邮箱 2封禁'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -400,7 +421,8 @@ CREATE TABLE `ca_user` (
 --
 
 INSERT INTO `ca_user` (`uid`, `username`, `password`, `email`, `avatar`, `phone`, `cash`, `credit`, `groupid`, `expiretime`, `referee`, `regdate`, `lastlogindate`, `status`) VALUES
-(1, 'zixu', '62c2547c9124886ce9d80010967525b6', '644752622@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', '', '2018-10-14 22:59:15', '2018-10-14 22:59:30', 0);
+(1, 'zixu', '62c2547c9124886ce9d80010967525b6', '644752622@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', 0, '2018-10-14 22:59:15', '2018-10-21 19:31:17', 0),
+(2, 'testtest123', '62c2547c9124886ce9d80010967525b6', 'test@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', NULL, '2018-10-26 14:23:59', '2018-10-26 14:25:11', 0);
 
 --
 -- Indexes for dumped tables
@@ -535,7 +557,7 @@ ALTER TABLE `ca_user`
 -- AUTO_INCREMENT for table `ca_active`
 --
 ALTER TABLE `ca_active`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ca_admin`
@@ -577,7 +599,7 @@ ALTER TABLE `ca_coupon`
 -- AUTO_INCREMENT for table `ca_loginrecord`
 --
 ALTER TABLE `ca_loginrecord`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ca_mysubscribe`
@@ -607,7 +629,7 @@ ALTER TABLE `ca_templet`
 -- AUTO_INCREMENT for table `ca_ticketreply`
 --
 ALTER TABLE `ca_ticketreply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ca_ugroup`
@@ -619,4 +641,4 @@ ALTER TABLE `ca_ugroup`
 -- AUTO_INCREMENT for table `ca_user`
 --
 ALTER TABLE `ca_user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户uid', AUTO_INCREMENT=2;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户uid', AUTO_INCREMENT=3;
