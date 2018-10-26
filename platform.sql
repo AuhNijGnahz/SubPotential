@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 26, 2018 at 08:51 AM
+-- Generation Time: Oct 26, 2018 at 09:06 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -102,7 +102,7 @@ CREATE TABLE `ca_cards` (
   `credit` int(11) NOT NULL COMMENT '积分额度',
   `expiretime` datetime NOT NULL COMMENT '过期时间',
   `uid` int(11) NOT NULL DEFAULT '0' COMMENT '使用者uid',
-  `usetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '使用时间'
+  `usetime` datetime NOT NULL DEFAULT '1970-01-01 08:00:00' COMMENT '使用时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -208,7 +208,7 @@ CREATE TABLE `ca_purchasemethod` (
   `mname` varchar(50) NOT NULL,
   `secureid` text NOT NULL COMMENT '支付接口ID',
   `securekey` text NOT NULL COMMENT '支付接口秘钥',
-  `thirdkey` varchar(50) DEFAULT NULL COMMENT '第三方参数值（如有赞云店铺ID）'
+  `thirdkey` text COMMENT '第三方参数值（如有赞云店铺ID）'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -410,9 +410,9 @@ CREATE TABLE `ca_user` (
   `credit` int(11) NOT NULL COMMENT '积分',
   `groupid` int(11) NOT NULL COMMENT '用户组ID',
   `expiretime` datetime NOT NULL COMMENT '用户组到期时间',
-  `referee` varchar(50) DEFAULT NULL COMMENT '推荐人',
+  `referee` int(11) DEFAULT '0' COMMENT '推荐人',
   `regdate` datetime NOT NULL COMMENT '注册时间',
-  `lastlogindate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后登录时间',
+  `lastlogindate` datetime DEFAULT '1970-01-01 08:00:00' COMMENT '最后登录时间',
   `status` int(11) NOT NULL COMMENT '状态 0正常1未验证邮箱 2封禁'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -421,7 +421,7 @@ CREATE TABLE `ca_user` (
 --
 
 INSERT INTO `ca_user` (`uid`, `username`, `password`, `email`, `avatar`, `phone`, `cash`, `credit`, `groupid`, `expiretime`, `referee`, `regdate`, `lastlogindate`, `status`) VALUES
-(1, 'zixu', '62c2547c9124886ce9d80010967525b6', '644752622@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', '', '2018-10-14 22:59:15', '2018-10-21 19:31:17', 0),
+(1, 'zixu', '62c2547c9124886ce9d80010967525b6', '644752622@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', 0, '2018-10-14 22:59:15', '2018-10-21 19:31:17', 0),
 (2, 'testtest123', '62c2547c9124886ce9d80010967525b6', 'test@qq.com', '/static/uploads/avatar/default/default.png', 0, 0.00, 0, 1, '3099-12-31 23:59:59', NULL, '2018-10-26 14:23:59', '2018-10-26 14:25:11', 0);
 
 --
