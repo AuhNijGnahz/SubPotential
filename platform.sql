@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 26, 2018 at 08:44 AM
+-- Generation Time: Oct 26, 2018 at 08:51 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -26,7 +26,7 @@ CREATE TABLE `ca_active` (
   `email` int(11) NOT NULL DEFAULT '0' COMMENT '邮箱状态 0未验证 1已验证',
   `phone` int(11) NOT NULL DEFAULT '0' COMMENT '手机状态 0未验证 1已验证',
   `recover` varchar(50) DEFAULT NULL COMMENT '找回密码code',
-  `createtime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '验证码生成时间'
+  `createtime` datetime NOT NULL DEFAULT '1970-01-01 08:00:00' COMMENT '验证码生成时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
