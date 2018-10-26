@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 26, 2018 at 09:06 AM
+-- Generation Time: Oct 26, 2018 at 10:32 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -84,7 +84,7 @@ CREATE TABLE `ca_buyrecord` (
   `uid` int(11) NOT NULL COMMENT '用户ID',
   `subname` varchar(50) NOT NULL COMMENT '商品名',
   `method` varchar(20) NOT NULL COMMENT '支付方式 cash/credit',
-  `type` int(10) NOT NULL COMMENT '购买类型 0新购/1续费',
+  `type` int(10) NOT NULL DEFAULT '0' COMMENT '购买类型 0新购/1续费',
   `price` float(9,2) NOT NULL COMMENT '支付价格',
   `purchasetime` datetime NOT NULL COMMENT '支付时间'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
