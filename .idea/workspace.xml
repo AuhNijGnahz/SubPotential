@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1494501b-0fff-493a-9fef-22fce5ad35dc" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thinkphp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/admin/controller/logControl.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/admin/controller/LogControl.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,11 +67,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
+      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="512" column="36" lean-forward="true" selection-start-line="512" selection-start-column="36" selection-end-line="512" selection-end-column="36" />
+            <state relative-caret-position="105">
+              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Payment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/model/Payment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -80,8 +88,8 @@
       <file leaf-file-name="UserHandle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/model/UserHandle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="282" column="9" lean-forward="true" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
+            <state relative-caret-position="583">
+              <caret line="242" column="54" lean-forward="true" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
               <folding>
                 <element signature="e#124#154#0#PHP" expanded="true" />
               </folding>
@@ -89,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+            <state relative-caret-position="414">
+              <caret line="199" column="28" lean-forward="true" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -119,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$_POST</find>
       <find>encryp</find>
       <find>verify</find>
       <find>self::sendEmail</find>
@@ -149,6 +156,7 @@
       <find>紫旭产品订阅平台</find>
       <find>紫旭产品订阅平台&lt;</find>
       <find>card</find>
+      <find>logControl</find>
     </findStrings>
     <replaceStrings>
       <replace>$c</replace>
@@ -188,10 +196,10 @@
       <dir>$PROJECT_DIR$/application/admin/view/index</dir>
       <dir>$PROJECT_DIR$/application/admin/view/LogControl</dir>
       <dir>$PROJECT_DIR$/application/index/view/index</dir>
-      <dir>$PROJECT_DIR$/application/admin/view</dir>
       <dir>$PROJECT_DIR$/extend/YouZan</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/application/index</dir>
+      <dir>$PROJECT_DIR$/application/admin/view</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -282,8 +290,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="76" />
+    <option name="x" value="89" />
+    <option name="y" value="132" />
     <option name="width" value="1532" />
     <option name="height" value="900" />
   </component>
@@ -311,6 +319,36 @@
               <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="web_control" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
@@ -447,22 +485,23 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="564153000" />
+    <option name="totallyTimeSpent" value="565348000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="76" width="1532" height="900" extended-state="0" />
+    <frame x="89" y="132" width="1532" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23302872" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3293979" />
-      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32716763" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23302872" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3283237" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -482,7 +521,6 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3293979" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.3283237" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32716763" />
       <window_info id="Favorites" order="0" side_tool="true" />
     </layout>
@@ -499,7 +537,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/extend/Symfony/Exception/RequestExceptionInterface.php" />
     <entry file="file://$PROJECT_DIR$/extend/Tightenco/Collect/Support/Traits/Macroable.php" />
     <entry file="file://$PROJECT_DIR$/extend/Hanson/Foundation/Config.php" />
     <entry file="file://$PROJECT_DIR$/extend/Hanson/Foundation/Foundation.php" />
@@ -648,16 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/Payment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="119" column="21" lean-forward="true" selection-start-line="119" selection-start-column="21" selection-end-line="119" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/admin/controller/logControl.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/admin/view/SubControl/card.html" />
     <entry file="file://$PROJECT_DIR$/application/index/view/index/account.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -741,20 +768,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Payment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/model/UserHandle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="282" column="9" lean-forward="true" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
+        <state relative-caret-position="583">
+          <caret line="242" column="54" lean-forward="true" selection-start-line="242" selection-start-column="54" selection-end-line="242" selection-end-column="54" />
           <folding>
             <element signature="e#124#154#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
+    <entry file="file://$PROJECT_DIR$/application/admin/controller/LogControl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="90">
+          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/admin/view/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="199" column="28" lean-forward="true" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
         </state>
       </provider>
     </entry>
