@@ -58,10 +58,7 @@ class Mail extends Model
         $mail->addAddress($to, $name);
         $mail->Subject = $title;
         $mail->Body = $content;
-        try {
-            $status = $mail->send();
-        } catch (Exception $e) {
-        }
+        $status = $mail->send();
         if (!$status) {
             return array('status' => false, 'message' => $mail->ErrorInfo);
         }
