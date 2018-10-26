@@ -26,7 +26,6 @@ QQ号码：644752622
   
 # 环境需求  
 PHP 7.0+ with MYSql 5.6  
-请勿使用MYSql5.7或以上，会出现各种问题！！  
 Curl扩展  
 支持集成式环境(LAMP，LNMP，MAMP等)
 # 安装说明  
