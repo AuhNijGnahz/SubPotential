@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1494501b-0fff-493a-9fef-22fce5ad35dc" name="默认" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/Mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/model/Mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thinkphp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/thinkphp/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,14 +77,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserHandle.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserHandle.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/model/UserHandle.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="253" column="20" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+            <state relative-caret-position="503">
+              <caret line="282" column="9" lean-forward="true" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
               <folding>
                 <element signature="e#124#154#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -109,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
       <find>$_POST</find>
       <find>encryp</find>
       <find>verify</find>
@@ -139,6 +148,7 @@
       <find>{$title}</find>
       <find>紫旭产品订阅平台</find>
       <find>紫旭产品订阅平台&lt;</find>
+      <find>card</find>
     </findStrings>
     <replaceStrings>
       <replace>$c</replace>
@@ -340,7 +350,7 @@
             <path>
               <item name="cqpadmin Free Version" type="b2602c69:ProjectViewProjectNode" />
               <item name="cqpadmin Free Version" type="462c0819:PsiDirectoryNode" />
-              <item name="extend" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -437,7 +447,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563703000" />
+    <option name="totallyTimeSpent" value="564153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="76" width="1532" height="900" extended-state="0" />
@@ -693,13 +703,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../cqpadmin Publisher/application/index/view/index/index2.html" />
-    <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-757">
@@ -740,11 +743,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/index/model/UserHandle.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="253" column="20" selection-start-line="253" selection-start-column="20" selection-end-line="253" selection-end-column="20" />
+        <state relative-caret-position="503">
+          <caret line="282" column="9" lean-forward="true" selection-start-line="282" selection-start-column="9" selection-end-line="282" selection-end-column="9" />
           <folding>
             <element signature="e#124#154#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
         </state>
       </provider>
     </entry>
