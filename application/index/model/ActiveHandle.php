@@ -43,7 +43,7 @@ class ActiveHandle extends Model
 
     static function activeEmail($uid)
     {
-        $active = self::getActiveStatus($uid);
+        $active = UserHandle::activeStatus($uid);
         if ($active['email']) {
             //已激活
             return array('status' => false, 'message' => '邮箱已经激活过！');
