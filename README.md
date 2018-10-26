@@ -35,8 +35,15 @@ Curl扩展
 ##### 文件权限  
 runtime 目录需要设置为777权限
 ##### URL重写  
-对于Apache服务器，您不需要进行什么特殊的配置，因为本产品使用MAMP作为开发环境。  
-但对于Nginx的服务器，您需要将您的重写按以下内容配置  
+对于Apache服务器，您需要将您的v-host的DocumentRoot配置为指向public。  
+如官方配置：  
+```
+<VirtualHost *:8080>
+    DocumentRoot "/Applications/MAMP/htdocs/platform/public"
+    ServerName *
+</VirtualHost>
+```  
+对于Nginx的服务器，您需要将您的重写按以下内容配置  
 ```  
 location / {
    if (!-e $request_filename) {
@@ -51,9 +58,6 @@ root /www/wwwroot/platform.zixutech.cn/public;
 ```  
 推荐您使用[宝塔面板](https://www.bt.cn/)对您的网站进行管理。  
 使用宝塔面板仅需在网站 -> 设置 -> 伪静态 内修改为Thinkphp方案，并在配置文件中修改一下第7行root如上述所说配置即可。  
-##### 重中之重  
-如果您使用的是Nginx系统，请您务必将application/admin/view 内的文件夹名修改为带下划线格式的，并且大写全部改为小写。  
-例如：原文件夹名是UserControl，则您需要修改为user_control
 ##### 安装完成   
 前台地址：您的域名/index   后台地址：您的域名/admin  初始用户名/密码：admin/admin  
 修改密码或添加管理员，请到数据库内手动修改admin表。  
