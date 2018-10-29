@@ -1,5 +1,5 @@
 # SubPotential - 便捷地在线订阅您的产品和服务  
-[Demo Site](https://platform.zixutech.cn/) | [![QQ群](https://img.shields.io/badge/QQ-838624017-blue.svg)](https://shang.qq.com/wpa/qunwpa?idkey=b58840392faae59978a8250dd5bf21d71c570e025a7499b405d273ee2f75402b) ![Fork](https://img.shields.io/github/forks/zjh4473/SubPotential.svg ) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)  [![Start](https://img.shields.io/github/stars/zjh4473/SubPotential.svg?style=social&label=Stars)](https://github.com/zjh4473/SubPotential)
+[演示站](https://platform.zixutech.cn/) | [![QQGroup](https://img.shields.io/badge/QQ-838624017-blue.svg)](https://shang.qq.com/wpa/qunwpa?idkey=b58840392faae59978a8250dd5bf21d71c570e025a7499b405d273ee2f75402b) ![Fork](https://img.shields.io/github/forks/zjh4473/SubPotential.svg ) ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)  [![Start](https://img.shields.io/github/stars/zjh4473/SubPotential.svg?style=social&label=Stars)](https://github.com/zjh4473/SubPotential)
 
 本产品基于ThinkPHP 5 开发，能够让您方便的出售和管理您的产品及服务
 
