@@ -27,7 +27,7 @@ For Public:
 
 ## 问题反馈
 
-###### 小提示：目前本产品刚开发完毕，不排除有很多BUG的可能性，如果您在使用中遇到问题，您可以通过一下途径直接向作者联系！  
+###### 小提示：目前本产品刚开发完毕，不排除有很多BUG的可能性，如果您在使用中遇到问题，您可以通过以下途径直接和我取得联系！  
 
 GitHub issues [![GitHub issues](https://img.shields.io/github/issues-raw/zjh4473/SubPotential.svg)](https://github.com/zjh4473/SubPotential/issues)
 
