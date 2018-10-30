@@ -185,7 +185,7 @@ class SubControl extends BasicControl
 //            $mode = '付费模式';
 //        }
         $bind = $request->post('bind');
-        var_dump($bind);
+        // var_dump($bind);
         if ($bind === 'true') {
             $bind = '是';
         } else {
