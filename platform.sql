@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 31, 2018 at 08:53 AM
+-- Generation Time: Nov 06, 2018 at 10:14 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -370,7 +370,7 @@ CREATE TABLE `ca_user` (
   `password` varchar(50) NOT NULL COMMENT '密码',
   `email` varchar(50) NOT NULL COMMENT '邮箱',
   `avatar` text NOT NULL COMMENT '头像链接',
-  `phone` int(11) DEFAULT NULL COMMENT '手机号',
+  `phone` varchar(11) DEFAULT NULL COMMENT '手机号',
   `cash` float(9,2) NOT NULL COMMENT '余额',
   `credit` int(11) NOT NULL COMMENT '积分',
   `groupid` int(11) NOT NULL COMMENT '用户组ID',
@@ -514,7 +514,7 @@ ALTER TABLE `ca_user`
 -- AUTO_INCREMENT for table `ca_active`
 --
 ALTER TABLE `ca_active`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ca_admin`
@@ -556,7 +556,7 @@ ALTER TABLE `ca_coupon`
 -- AUTO_INCREMENT for table `ca_loginrecord`
 --
 ALTER TABLE `ca_loginrecord`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ca_mysubscribe`
@@ -586,7 +586,7 @@ ALTER TABLE `ca_templet`
 -- AUTO_INCREMENT for table `ca_ticketreply`
 --
 ALTER TABLE `ca_ticketreply`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `ca_ugroup`
@@ -598,4 +598,4 @@ ALTER TABLE `ca_ugroup`
 -- AUTO_INCREMENT for table `ca_user`
 --
 ALTER TABLE `ca_user`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户uid', AUTO_INCREMENT=3;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT COMMENT '用户uid';
