@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 06, 2018 at 10:14 AM
+-- Generation Time: Nov 06, 2018 at 10:25 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.1.12
 
@@ -186,8 +186,8 @@ CREATE TABLE `ca_price` (
 CREATE TABLE `ca_purchasemethod` (
   `id` int(11) NOT NULL,
   `mname` varchar(50) NOT NULL,
-  `secureid` text NOT NULL COMMENT '支付接口ID',
-  `securekey` text NOT NULL COMMENT '支付接口秘钥',
+  `secureid` text COMMENT '支付接口ID',
+  `securekey` text COMMENT '支付接口秘钥',
   `thirdkey` text COMMENT '第三方参数值（如有赞云店铺ID）'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -196,7 +196,7 @@ CREATE TABLE `ca_purchasemethod` (
 --
 
 INSERT INTO `ca_purchasemethod` (`id`, `mname`, `secureid`, `securekey`, `thirdkey`) VALUES
-(1, '有赞云支付', '9da7b85373086ce5fd', '7046f2195fc6d69919c6609c55b315db', '40575835');
+(1, '有赞云支付', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
