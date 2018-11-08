@@ -8,6 +8,8 @@
 
 namespace app\index\controller;
 
+use app\admin\model\UserModel;
+use app\admin\model\WebModel;
 use app\index\model\UserHandle;
 use IpLocation\IpLocation;
 use think\Controller;
@@ -23,9 +25,9 @@ class BasicControl extends Controller
         $uid = Session::get('uid');
         $actionName = strtolower(ACTION_NAME);
         $controllerName = strtolower(CONTROLLER_NAME);
-//        var_dump(Cookie::has('ltoken', 'cqp_'));
+        // 如果获取不到UID则表示没有登录
         if (empty($uid)) {
-//            var_dump(Cookie::has('email','cqp_'));
+            // 是否有Cookies 如果有则用Cookies登录
             if (Cookie::has('ltoken', 'cqp_')) {
                 $logintoken = encryption(Cookie::get('ltoken', 'cqp_'), 'D');
                 $logintoken = explode('|', $logintoken);
@@ -48,9 +50,16 @@ class BasicControl extends Controller
                     $this->redirect('/index/index/login');
                     exit();
                 }
+                // 通过Cookies登录
                 $loginRt = UserHandle::login($email, $password, $ip, $location);
                 if ($loginRt['status']) {
                     $user = $loginRt['userObj'];
+                    if ($user->status === 1) {
+                        //封禁
+                        Cookie::clear('cqp_');
+                        $this->redirect('/index/index/login');
+                        exit();
+                    }
                     $group = UserHandle::getGroupByid($user->groupid);
                     Session::set('username', $user->username);
                     Session::set('uid', $user->uid);
@@ -58,6 +67,7 @@ class BasicControl extends Controller
                     $activeStatus = UserHandle::activeStatus($user->uid);
                     $user->emailactive = $activeStatus['email'];
                     $user->phoneactive = $activeStatus['phone'];
+                    $this->checkGroupExpire($user, $user->expiretime);
                     $this->assign([
                         'me' => $user,
                         'group' => $group['groupObj'][0],
@@ -100,26 +110,30 @@ class BasicControl extends Controller
                         exit();
                 }
             }
+            //获取到UID，表示已登录
         } else {
-            $user = new User();
-            $userinfo = $user->getuserinfo($uid);
-            $group = $user->getGroupInfo($userinfo['userObj']->groupid);
+            $userObj = new User();
+            $user = $userObj->getuserinfo($uid)['userObj'];
+            if ($user->status === 1) {
+                //封禁
+                (new User())->logout();
+            }
+            $group = $userObj->getGroupInfo($user->groupid);
             $activeStatus = UserHandle::activeStatus($uid);
-            $userinfo['userObj']->emailactive = $activeStatus['email'];
-            $userinfo['userObj']->phoneactive = $activeStatus['phone'];
-            if ($userinfo['status']) {
-                $this->assign([
-                    'me' => $userinfo['userObj'],
-                    'group' => $group['groupObj'],
-                    'domain' => $_SERVER['HTTP_HOST'],
-                    'avatar' => $this->getAvatar($uid),
+            $user->emailactive = $activeStatus['email'];
+            $user->phoneactive = $activeStatus['phone'];
+            $this->checkGroupExpire($user, $user->expiretime);
+            $this->assign([
+                'me' => $user,
+                'group' => $group['groupObj'],
+                'domain' => $_SERVER['HTTP_HOST'],
+                'avatar' => $this->getAvatar($uid),
 //                    'username' => $username,
 //                    'cash' => number_format($userinfo['userObj']->cash, 2),
 //                    'credit' => $userinfo['userObj']->credit,
 //                    'uid' => $userinfo['userObj']->uid,
 //                    'email'=>$userinfo['userObj']->email
-                ]);
-            }
+            ]);
         }
         $web = new IndexHandle();
         $webObj = $web::getWebSettings();
@@ -142,6 +156,21 @@ class BasicControl extends Controller
         $identicon = new Identicon();
         $url = $identicon->getImageDataUri($uid, 100);
         return $url;
+    }
+
+    public function checkGroupExpire($user, $expiretime)
+    {
+        $expire = checkExpire($expiretime);
+        $default = WebModel::getRegSettings();
+        $default = $default['webObj'][0]->groupid;
+        if ($expire) {
+            //已经过期
+            $result = UserModel::editUser($user->email, $user->username, $user->password, $default, '3099-12-31 23:59:59', $user->status, $user->cash, $user->credit, $user->avatar);
+            return;
+        } else {
+            //没过期
+            return;
+        }
     }
 
 }

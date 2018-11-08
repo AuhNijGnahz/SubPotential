@@ -301,7 +301,7 @@
                                 <tbody>
                                 {volist name="userlist" id="user"}
                                 <tr>
-                                    <td><input type="checkbox" value={$user.uid} class="checkOne" onclick="checkOne"></td>
+                                    <td><input type="checkbox" value={$user.uid} class="checkOne" onclick="checkOne()"></td>
                                     <td>{$user.uid}</td>
                                     <td>{$user.username}</td>
                                     <td>{$user.email}</td>

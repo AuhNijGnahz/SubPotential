@@ -219,6 +219,17 @@ class WebControl extends BasicControl
         }
     }
 
+    public function dAllAn(Request $request)
+    {
+        $id = $request->post('id');
+        $id = explode(',', $id);
+        if (empty($id)) $this->error('请勾选要删除的公告');
+        for ($i = 0; $i < count($id); $i++) {
+            $anRt = AnnounceModel::dSingleAn($id[$i]);
+        }
+        return json_encode(array('status' => true));
+    }
+
     public function dSingleAn(Request $request)
     {
         $id = $request->post('id');
@@ -228,6 +239,14 @@ class WebControl extends BasicControl
         } else {
             return json_encode(array('status' => false, 'message' => $anRt['message']));
         }
+    }
+
+    public function searchAn(Request $request)
+    {
+        $param = $request->post('param'); //条件
+        $text = $request->post('text'); //要查找的内容
+        $result = AnnounceModel::searchAn($param, $text);
+        return json_encode(array('status' => true, 'anObj' => $result['anObj']));
     }
 
     public function setPurchaseMethod(Request $request)

@@ -44,7 +44,8 @@
 
             <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
                 <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
-                    <span class="tpl-header-list-user-nick">{$adminUser}</span><span class="tpl-header-list-user-ico"> <img
+                    <span class="tpl-header-list-user-nick">{$adminUser}</span><span
+                        class="tpl-header-list-user-ico"> <img
                         src="/static/admin-assets/img/user01.png"></span>
                 </a>
                 <ul class="am-dropdown-content">
@@ -176,10 +177,10 @@
                             </a>
                         </li>
                         <!--<li>-->
-                            <!--<a href="/admin/ticketControl/ticketClass">-->
-                                <!--<i class="am-icon-angle-right"></i>-->
-                                <!--<span>分类管理</span>-->
-                            <!--</a>-->
+                        <!--<a href="/admin/ticketControl/ticketClass">-->
+                        <!--<i class="am-icon-angle-right"></i>-->
+                        <!--<span>分类管理</span>-->
+                        <!--</a>-->
                         <!--</li>-->
                         <li>
                             <a href="/admin/ticketControl/ticketList">
@@ -247,10 +248,7 @@
                                 <button id="add" type="button" class="am-btn am-btn-default am-btn-primary"><span
                                         class="am-icon-plus"></span> 新增
                                 </button>
-                                <button id="shenhe" type="button" class="am-btn am-btn-default am-btn-warning"><span
-                                        class="am-icon-tasks"></span> 上/下架
-                                </button>
-                                <button id="delete" type="button" class="am-btn am-btn-default am-btn-danger"><span
+                                <button id="deleteall" type="button" class="am-btn am-btn-default am-btn-danger"><span
                                         class="am-icon-trash-o"></span> 删除
                                 </button>
                             </div>
@@ -258,21 +256,19 @@
                     </div>
                     <div class="am-u-sm-12 am-u-md-3">
                         <div class="am-form-group">
-                            <select data-am-selected="{btnSize: 'sm'}">
+                            <select id="param" data-am-selected="{btnSize: 'sm'}">
                                 <option value="option1">查找方式</option>
-                                <option value="uid">UID</option>
-                                <option value="username">用户名</option>
-                                <option value="email">邮箱</option>
-                                <option value="cash">余额</option>
-                                <option value="credit">积分</option>
+                                <option value="title">公告标题</option>
+                                <option value="author">作者</option>
+                                <option value="status">状态</option>
                             </select>
                         </div>
                     </div>
                     <div class="am-u-sm-12 am-u-md-3">
                         <div class="am-input-group am-input-group-sm">
-                            <input type="text" class="am-form-field">
+                            <input id="searchtext" type="text" class="am-form-field">
                             <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"
+            <button id="search" class="am-btn am-btn-default am-btn-success tpl-am-btn-success am-icon-search"
                     type="button"></button>
           </span>
                         </div>
@@ -298,7 +294,8 @@
                                 <tbody>
                                 {volist name="announcelist" id="announce"}
                                 <tr>
-                                    <td><input type="checkbox" value={$announce.id} class="checkOne" onclick="checkOne"></td>
+                                    <td><input type="checkbox" value={$announce.id} class="checkOne" onclick="checkOne()">
+                                    </td>
                                     <td>{$announce.id}</td>
                                     <td>{$announce.title}</td>
                                     <td>{$announce.author}</td>
@@ -307,15 +304,18 @@
                                     <td>
                                         <div class="am-btn-toolbar">
                                             <div class="am-btn-group am-btn-group-xs">
-                                                <button type="button" value="{$announce.id}" class="btn_edit am-btn am-btn-default am-btn-xs am-text-secondary"
+                                                <button type="button" value="{$announce.id}"
+                                                        class="btn_edit am-btn am-btn-default am-btn-xs am-text-secondary"
                                                         title="编辑公告">
                                                     <span class="am-icon-edit"></span>
                                                 </button>
-                                                <button type="button" value="{$announce.id}" class="btn_change am-btn am-btn-default am-btn-xs am-hide-sm-only"
-                                                        title="一键上下架">
+                                                <button type="button" value="{$announce.id}"
+                                                        class="btn_change am-btn am-btn-default am-btn-xs am-hide-sm-only"
+                                                        title="一键发布/下架">
                                                     <span class="am-icon-tasks"></span>
                                                 </button>
-                                                <button type="button" value={$announce.id} class="btn_delete am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"
+                                                <button type="button" value={$announce.id}
+                                                        class="btn_delete am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"
                                                         title="删除">
                                                     <span class="am-icon-trash-o"></span>
                                                 </button>
@@ -329,15 +329,15 @@
                             <div class="am-cf">
 
                                 <!--<div class="am-fr">-->
-                                    <!--<ul class="am-pagination tpl-pagination">-->
-                                        <!--<li class="am-disabled"><a href="#">«</a></li>-->
-                                        <!--<li class="am-active"><a href="#">1</a></li>-->
-                                        <!--<li><a href="#">2</a></li>-->
-                                        <!--<li><a href="#">3</a></li>-->
-                                        <!--<li><a href="#">4</a></li>-->
-                                        <!--<li><a href="#">5</a></li>-->
-                                        <!--<li><a href="#">»</a></li>-->
-                                    <!--</ul>-->
+                                <!--<ul class="am-pagination tpl-pagination">-->
+                                <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                                <!--<li class="am-active"><a href="#">1</a></li>-->
+                                <!--<li><a href="#">2</a></li>-->
+                                <!--<li><a href="#">3</a></li>-->
+                                <!--<li><a href="#">4</a></li>-->
+                                <!--<li><a href="#">5</a></li>-->
+                                <!--<li><a href="#">»</a></li>-->
+                                <!--</ul>-->
                                 <!--</div>-->
                             </div>
                             <hr>
@@ -373,21 +373,22 @@
 <script src="/static/admin-assets/js/app.js"></script>
 <script src="/static/admin-assets/js/announce.js"></script>
 <script>
-    function checkAll(){
-        $(".checkOne").prop("checked",$(".checkAll").prop("checked"));
+    function checkAll() {
+        $(".checkOne").prop("checked", $(".checkAll").prop("checked"));
     }
 
-    function checkOne(){
+    function checkOne() {
         var allChecked = true;
-        $(".checkOne").each(function(){
-            if($(this).prop("checked") === false){
+        $(".checkOne").each(function () {
+            if ($(this).prop("checked") === false) {
                 allChecked = false;
-            };
+            }
+            ;
         });
-        if(allChecked){
-            $(".checkAll").prop("checked",true);
+        if (allChecked) {
+            $(".checkAll").prop("checked", true);
         } else {
-            $(".checkAll").prop("checked",false);
+            $(".checkAll").prop("checked", false);
         }
     }
 </script>

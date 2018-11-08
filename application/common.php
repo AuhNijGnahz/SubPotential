@@ -137,3 +137,17 @@ function abacaAddslashes($var)
     }
     return $var;
 }
+
+function checkExpire($expiretime)
+{
+    if (!strtotime($expiretime)) {
+        //不是时间
+        return true;
+    }
+    $expiretime = number_format(strtotime($expiretime) / 3600 / 24 - time() / 3600 / 24);
+    if ($expiretime <= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}

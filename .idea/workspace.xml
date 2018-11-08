@@ -29,7 +29,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="common.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/common.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="749">
+              <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -131,7 +141,6 @@
         <option value="$PROJECT_DIR$/public/static/assets/js/custom.min.js" />
         <option value="$PROJECT_DIR$/extend/Captcha/GeetestLib.php" />
         <option value="$PROJECT_DIR$/extend/Captcha/Geetestlib.php" />
-        <option value="$PROJECT_DIR$/application/common.php" />
         <option value="$PROJECT_DIR$/public/static/assets/js/account.js" />
         <option value="$PROJECT_DIR$/application/index/model/SubHandle.php" />
         <option value="$PROJECT_DIR$/public/static/assets/js/mysub.js" />
@@ -173,6 +182,7 @@
         <option value="$PROJECT_DIR$/application/index/view/index/account.html" />
         <option value="$PROJECT_DIR$/application/index/model/ActiveHandle.php" />
         <option value="$PROJECT_DIR$/application/index/model/Mail.php" />
+        <option value="$PROJECT_DIR$/application/common.php" />
       </list>
     </option>
   </component>
@@ -204,7 +214,7 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="50" />
+    <option name="x" value="137" />
     <option name="y" value="80" />
     <option name="width" value="1532" />
     <option name="height" value="900" />
@@ -215,7 +225,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,6 +246,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -320,6 +330,7 @@
       <workItem from="1539524590429" duration="35165000" />
       <workItem from="1539956369522" duration="1865000" />
       <workItem from="1540546686069" duration="784000" />
+      <workItem from="1541663961334" duration="27000" />
     </task>
     <servers />
   </component>
@@ -329,10 +340,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="567115000" />
+    <option name="totallyTimeSpent" value="567142000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="80" width="1532" height="900" extended-state="0" />
+    <frame x="115" y="80" width="1532" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23302872" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -340,12 +352,12 @@
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3293979" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.32716763" />
-      <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="检查结果" order="12" weight="0.32967034" />
@@ -368,7 +380,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/extend/Hanson/Foundation/Foundation.php" />
     <entry file="file://$PROJECT_DIR$/extend/Slince/Amount.php" />
     <entry file="file://$PROJECT_DIR$/extend/Slince/ApiContext.php" />
     <entry file="file://$PROJECT_DIR$/extend/Slince/YouzanPay.php" />
@@ -569,9 +580,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4035">
           <caret line="277" column="20" selection-start-line="277" selection-start-column="20" selection-end-line="277" selection-end-column="20" />
-          <folding>
-            <element signature="e#124#154#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -593,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-          <folding>
-            <element signature="e#124#156#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -606,6 +611,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="749">
+          <caret line="152" column="1" selection-start-line="152" selection-start-column="1" selection-end-line="152" selection-end-column="1" />
         </state>
       </provider>
     </entry>

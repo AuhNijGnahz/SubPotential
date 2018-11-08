@@ -90,7 +90,8 @@ class UserModel extends Model
         if (!$user) {
             //假
             return array('status' => false, 'message' => '要编辑的用户已经不存在了！');
-        } else if (!empty($password)) {
+        }
+        if (!empty($password)) {
             $user->password = $password;
         }
         $user->username = $username;
